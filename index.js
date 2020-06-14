@@ -1,5 +1,4 @@
-require('dotenv');
-const PORT              = 8008
+require('dotenv').config();
 const express           = require('express');
 const app               = express();
 const connetMongoDB     = require('./db/mongoose');
@@ -10,6 +9,6 @@ connetMongoDB()
 
 app.use(bodyParser.json())
 app.use('/', userRoutes)
-app.listen(PORT, (req,res) => {
-    console.log(`server run on port ${PORT}`)
+app.listen(process.env.PORT, (req,res) => {
+    console.log(`server run on port ${process.env.PORT}`)
 })
