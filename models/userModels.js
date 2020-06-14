@@ -12,3 +12,8 @@ exports.addDaftarUser = async (data) => {
         message: 'User berhasil ditambahkan'
     }
 }
+
+exports.getUserByUsername = async (username) => {
+    const result = await User.findOne({username: username})
+    return result
+}
