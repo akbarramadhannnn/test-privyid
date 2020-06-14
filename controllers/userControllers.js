@@ -55,3 +55,11 @@ exports.loginUser = async (req,res) => {
         return e
     }
 }
+
+exports.logoutUser = async (req,res) => {
+    res.status(200).json({ 
+        status: true,
+        message: 'berhasil logout', 
+        token: null 
+    });
+}
